@@ -117,7 +117,7 @@ function filterMovies(criteria) {
       console.log('Title:', movie.title);
       console.log('Director:', movie.director);
       console.log('Genre:', movie.genre);
-      console.log('Year:', movie.releaseYear);
+      console.log('Release Year:', movie.releaseYear);
       console.log('-------------------');
     });
   } else {
