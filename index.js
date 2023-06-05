@@ -1,4 +1,4 @@
-// main.js
+//index.js
 
 const { displayCatalog, addMovie, updateMovie, deleteMovie, searchMovies, filterMovies, fetchMoviesFromAPI } = require('./movieCatalog');
 const readline = require('readline');
