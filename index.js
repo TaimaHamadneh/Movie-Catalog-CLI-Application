@@ -9,13 +9,13 @@ const rl = readline.createInterface({
 });
 
 function displayMenu() {
-  console.log('\nMovie Catalog CLI');
+  console.log('\nMovie Catalog:');
   console.log('-----------------\n');
-  console.log('1. Display Movie Catalog');
+  console.log('1. Display All Movie');
   console.log('2. Add New Movie');
-  console.log('3. Update Movie Details');
+  console.log('3. Update Movie Data');
   console.log('4. Delete Movie');
-  console.log('5. Search Movies');
+  console.log('5. Search Movie');
   console.log('6. Filter Movies');
   console.log('7. Fetch Movies from API');
   console.log('8. Exit\n');
@@ -28,10 +28,10 @@ function handleMenuChoice(ch) {
       displayCatalog();
       break;
     case '2':
-      rl.question('Enter movie title: ', (title) => {
-        rl.question('Enter movie director: ', (director) => {
-          rl.question('Enter release year: ', (releaseYear) => {
-            rl.question('Enter genre: ', (genre) => {
+      rl.question('Enter the title: ', (title) => {
+        rl.question('Enter the director: ', (director) => {
+          rl.question('Enter the release year: ', (releaseYear) => {
+            rl.question('Enter the genre: ', (genre) => {
               addMovie(title, director, releaseYear, genre);
               displayMenu();
             });
@@ -40,7 +40,7 @@ function handleMenuChoice(ch) {
       });
       break;
     case '3':
-      rl.question('Enter the movie title to update: ', (title) => {
+      rl.question('Enter the movie title to update it: ', (title) => {
         rl.question('Enter the new title: ', (newTitle) => {
           rl.question('Enter the new director: ', (newDirector) => {
             rl.question('Enter the new release year: ', (newYear) => {
@@ -54,19 +54,19 @@ function handleMenuChoice(ch) {
       });
       break;
     case '4':
-      rl.question('Enter the movie title to delete: ', (title) => {
+      rl.question('Enter the title of the movie you want to delete:', (title) => {
         deleteMovie(title);
         displayMenu();
       });
       break;
     case '5':
-      rl.question('Enter the search keyword: ', (keyword) => {
+      rl.question('Enter the keyword to search for movies: ', (keyword) => {
         searchMovies(keyword);
         displayMenu();
       });
       break;
     case '6':
-      rl.question('Enter the filter criteria: ', (criteria) => {
+      rl.question('Enter the criteria to filter movies: ', (criteria) => {
         filterMovies(criteria);
         displayMenu();
       });
@@ -79,7 +79,7 @@ function handleMenuChoice(ch) {
       rl.close();
       break;
     default:
-      console.log('Invalid choice. Please try again.');
+      console.log('Please enter a valid option. Invalid choice.');
       displayMenu();
       break;
   }
